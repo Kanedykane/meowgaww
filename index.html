@@ -41,17 +41,21 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="assets/img/logo.png" alt="">
+        <!-- Default logo for larger screens -->
+        <img src="assets/img/logo.png" alt="" class="d-none d-md-block">
+
+        <!-- Logo for mobile screens -->
+        <img src="assets/img/mobile-logo.png" alt="" class="d-md-none">
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Gallery</a></li>
-          <li><a href="#menu">Donate</a></li>
-          <li><a href="#events">Blogs</a></li>
-          <li><a href="#chefs">Shop</a></li>
-          <li><a href="#gallery">About Us</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About Us</a></li>
       </nav><!-- .navbar -->
 
       <a class="btn-book-a-table" href="#book-a-table">Sign In</a>
