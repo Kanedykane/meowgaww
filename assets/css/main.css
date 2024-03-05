@@ -301,7 +301,7 @@ section {
   background: var(--color-primary);
   padding: 8px 20px;
   border-radius: 50px;
-  margin-left: 10px;
+  margin-left: 15px;
   transition: 0.3s;
 }
 
@@ -317,6 +317,12 @@ section {
   }
   .header .user-authBtn{
     padding: 8px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--color-primary);
+    border-radius: 20px;
+    margin-left: 15px;
+    transition: 0.3s;
   }
 }
 

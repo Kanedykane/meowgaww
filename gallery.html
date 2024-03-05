@@ -1,399 +1,418 @@
-<!DOCTYPE html>
-
 <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>MeowgAw</title>
-      <link rel="shortcut icon" type="image/png" href="img/icon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-r4H4wO6z8+79H/5bDIWkzmlQuzVRogdKC7GDsjOcd4fsOTPYu3ZfMW+UfR5A/yYO" crossorigin="anonymous">
-  </head>
 
-  <body>
-    <!-- header/navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-          <a class="logo navbar-brand" hrf=""><img width="160px" src="img/logo.png"></a>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-          <!-- toggle button -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-               
-          <!-- navbar links -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#about">Gallery</a></li> 
-                  <li class="nav-item"><a class="nav-link" href="#services">Donate</a></li> 
-                  <li class="nav-item"><a class="nav-link" href="#services">Shop</a></li> 
-                  <li class="nav-item"><a class="nav-link" href="#blogs.html">Blogs</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#team">About Us</a></li>
+  <title>MeowgAw | Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-                  <!--user authentication buttons-->
-                  <li><button type="button" class="btn btn-light user_authBtn" onclick="openPopup('signin-popup')">Sign Up</button></li>
-                  <li><button type="button" class="btn btn-light user_authBtn" onclick="openPopup('login-popup')">Sign In</button></li>        
-              </ul>
-          </div>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-      </div>
-    </nav>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-    <!--gallery banner-->
-    <div class="container-fluid">
-      <div class="row py-5">
-        <div class="col-lg-12 mx-auto">
-          <div class="text-white p-5 shadow-sm rounded banner">
-            <h3 class="display-4">Gallery</h3>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-              <div class="dropdown d-inline">
-                <button class="btn btn-secondary dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Type
-                </button>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Cat</a></li>
-                  <li><a class="dropdown-item" href="#">Dog</a></li>
-                  <li><a class="dropdown-item" href="#">Reptile</a></li>
-                  <li><a class="dropdown-item" href="#">Other</a></li>
-                </ul>
-              </div>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
-              <div class="dropdown d-inline">
-                <button class="btn btn-secondary dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sex
-                </button>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Male</a></li>
-                  <li><a class="dropdown-item" href="#">Female</a></li>
-                </ul>
-              </div>
+  <!---gallery css--->
+  <link href="assets/css/gallery.css" rel="stylesheet">
 
-              <div class="dropdown d-inline">
-                <button class="btn btn-secondary dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Color
-                </button>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">White</a></li>
-                  <li><a class="dropdown-item" href="#">Black</a></li>
-                  <li><a class="dropdown-item" href="#">Orange</a></li>
-                  <li><a class="dropdown-item" href="#">Brown</a></li>
-                  <li><a class="dropdown-item" href="#">Other</a></li>
-                </ul>
-              </div>
+  <!-- =======================================================
+  * Edit with caution
+  * KM2JS
+  ======================================================== -->
+</head>
 
-              <div class="dropdown d-inline">
-                <button class="btn btn-secondary dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Size
-                </button>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
+<body>
 
-              <div class="dropdown d-inline">
-              <button class="btn btn-secondary dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Age Range
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Default logo for larger screens -->
+        <img src="assets/img/logo.png" alt="" class="d-none d-md-block">
+
+        <!-- Logo for mobile screens -->
+        <img src="assets/img/mobile-logo.png" alt="" class="d-md-none">
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="home.html"></a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+      </nav><!-- .navbar -->
+
+      <a class="user-authBtn" href="#">Sign In</a>
+      <a class="user-authBtn" href="#">Sign Up</a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!--gallery banner-->
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs gallery-container mb-4">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="display-3">Gallery</h1>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Gallery</li>
+          </ol>
+        </div>
+
+        <div class="dropdown d-inline">
+              <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Type
               </button>
               
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#"><1 year old</a></li>
-                <li><a class="dropdown-item" href="#">1 - 2 years old</a></li>
-                <li><a class="dropdown-item" href="#">3-4 years old</a></li>
-                <li><a class="dropdown-item" href="#">>5 years old</a></li>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Cat</a></li>
+                <li><a class="dropdown-item" href="#">Dog</a></li>
+                <li><a class="dropdown-item" href="#">Reptile</a></li>
+                <li><a class="dropdown-item" href="#">Other</a></li>
               </ul>
             </div>
 
+            <div class="dropdown d-inline">
+              <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Sex
+              </button>
+              
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Male</a></li>
+                <li><a class="dropdown-item" href="#">Female</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown d-inline">
+              <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Color
+              </button>
+              
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">White</a></li>
+                <li><a class="dropdown-item" href="#">Black</a></li>
+                <li><a class="dropdown-item" href="#">Orange</a></li>
+                <li><a class="dropdown-item" href="#">Brown</a></li>
+                <li><a class="dropdown-item" href="#">Other</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown d-inline">
+              <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Size
+              </button>
+              
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown d-inline">
+            <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Age Range
+            </button>
+              
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><1 year old</a></li>
+              <li><a class="dropdown-item" href="#">1 - 2 years old</a></li>
+              <li><a class="dropdown-item" href="#">3-4 years old</a></li>
+              <li><a class="dropdown-item" href="#">>5 years old</a></li>
+            </ul>
           </div>
-        </div>
+          
       </div>
-    </div>
-    <!-- End -->
+    </div><!-- End Breadcrumbs -->
 
-    <div class="container p-1">
-      <div class="row">
+  <div class="container p-1">
+    <div class="row">
 
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5><a href="#" class="text-dark">Red paint cup</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
-                <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Blorange</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">PNG</span></p>
-                <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-3.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">And She Realized</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
-                <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-4.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">DOSE Juice</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPEG</span></p>
-                <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-5.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Pineapple</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">PNG</span></p>
-                <div class="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-6.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Yellow banana</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
-                <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-7.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Teal Gameboy</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPEG</span></p>
-                <div class="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-8.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Color in Guatemala.</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">PNG</span></p>
-                <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
-                <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Lorem ipsum dolor</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">PNG</span></p>
-                <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-3.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Lorem ipsum dolor</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
-                <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End -->
-
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-          <div class="bg-white rounded shadow-sm"><img src="https://bootstrapious.com/i/snippets/sn-gallery/img-4.jpg" alt="" class="img-fluid card-img-top">
-            <div class="p-4">
-              <h5> <a href="#" class="text-dark">Lorem ipsum dolor</a></h5>
-              <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPEG</span></p>
-                <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
-              </div>
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-1.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5><a href="#" class="text-dark">Confusion</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
       <!-- End -->
 
-      <!-- Footer -->
-      <footer class="text-center text-lg-start text-dark" style="background-color: white">
-         
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-between p-3 text-white" style="background-color: #f1c5b7">
-            <!-- Left -->
-            <div class="me-5">
-              <span>Get connected with us on social networks:</span>
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-2.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Anthony</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
             </div>
-            <!-- Left -->
-
-            <!-- Right -->
-            <div>
-              <a href="" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
-              <a href="" class="text-white me-4"><i class="fab fa-twitter"></i></a>
-              <a href="" class="text-white me-4"><i class="fab fa-google"></i></a>
-              <a href="" class="text-white me-4"><i class="fab fa-instagram"></i></a>
-              <a href="" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
-              <a href="" class="text-white me-4"><i class="fab fa-github"></i></a>
-            </div>
-            <!-- Right -->
-          
-        </section>
-          <!-- Section: Social media -->
-
-          <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-              <div class="row mt-3">
-                <!-- Grid column -->
-                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                  <!-- Content -->
-                    <a class="logo navbar-brand" href=""><img width="160px" src="img/logo.png"></a>
-                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <!-- Grid column -->
-
-                  <!-- Grid column -->
-                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">Products</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p><a href="#!" class="text-dark">MDBootstrap</a></p>
-                    <p><a href="#!" class="text-dark">MDWordPress</a></p>
-                    <p><a href="#!" class="text-dark">BrandFlow</a></p>
-                    <p><a href="#!" class="text-dark">Bootstrap Angular</a></p>
-                  </div>
-                  <!-- Grid column -->
-
-                  <!-- Grid column -->
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">Useful links</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                <p><a href="#!" class="text-dark">Your Account</a></p>
-                    <p><a href="#!" class="text-dark">Become an Affiliate</a></p>
-                    <p><a href="#!" class="text-dark">Shipping Rates</a></p>
-                    <p><a href="#!" class="text-dark">Help</a></p>
-                  </div>
-                  <!-- Grid column -->
-
-                  <!-- Grid column -->
-                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                  <!-- Links -->
-                    <h6 class="text-uppercase fw-bold">Contact</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                    <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-                  </div>
-                  <!-- Grid column -->
-              </div>
-            <!-- Grid row -->
-            </div>
-        </section>
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center p-1 text-white" style="background-color: #566f64;">
-          ©2023 Copyright.
-            <a class="text-white" href="https://mdbootstrap.com/">All Rights Reserved. K<sup>2</sup>MJS</a>
+          </div>
         </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-  </body>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-3.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Mary</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-4.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Jennifer</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">CAT</span></p>
+              <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-5.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">John</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-6.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Hanabishi</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-7.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Nana</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">CAT</span></p>
+              <div class="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-8.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Take 1? Take 2</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-9.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Munchkin Sugarplum</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">REPTILE</span></p>
+              <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-10.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Eyeyeye</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">CAT</span></p>
+              <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-11.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Pug Doggo</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">DOG</span></p>
+              <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End -->
+
+      <!-- Gallery item -->
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-white rounded shadow-sm"><img src="assets/img/gallery/gallery-12.jpg" alt="" class="gallery-img img-fluid card-img-top">
+          <div class="p-4">
+            <h5> <a href="#" class="text-dark">Popsicle</a></h5>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">REPTILE</span></p>
+              <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Address</h4>
+            <p>
+              University of the Philippines Visayas <br>
+              Miagao, Iloilo<br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Contact Us</h4>
+            <p>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> meowgaw@gmail.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
+              Sunday: Closed
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>MeowgAw</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Developed by K<sup>2</sup>MJS.
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
