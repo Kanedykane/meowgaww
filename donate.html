@@ -142,7 +142,7 @@
                 <div class="card-body">
                   <h2 class="card-title">Donate Online</h2>
                   <p class="card-text">You can make an online donation securely through our website using your credit card or e-wallet account.</p>
-                  <a href="#official-donation-channels" class="btn btn-primary">Donate Online</a>
+                  <a href="#donation-information" class="btn btn-primary">Donate Online</a>
                 </div>
               </div>
             </div>
@@ -160,39 +160,68 @@
       </section><!-- End Donate Options -->
 
     <!-- ======= Donation Information Section ======= -->
-    <div class="container">
-      <h2>Donation Information</h2>
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#1000">1000 Pesos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#750">750 Pesos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#500">500 Pesos</a>
-        </li>
-      </ul>
-  
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div id="1000" class="container tab-pane active">
-          <h3>1000 Pesos</h3>
-          <input id="amountInput1000" type="text" class="form-control" value="1000" readonly>
-        </div>
-        <div id="750" class="container tab-pane fade">
-          <h3>750 Pesos</h3>
-          <input id="amountInput750" type="text" class="form-control" value="750" readonly>
-        </div>
-        <div id="500" class="container tab-pane fade">
-          <h3>500 Pesos</h3>
-          <input id="amountInput500" type="text" class="form-control" value="500" readonly>
-        </div>
+    <section id="donation-information" class="section">
+      <div class="container">
+          <div class="section-title">
+              <h2>Make a One-Time Donation</h2>
+              <p>Help us give these animals a second chance at a happy and healthy life.</p>
+          </div>
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <!-- Donation Form -->
+                          <form id="donation-form" class="donation-form">
+                              <div class="mb-3">
+                                  <label for="donation-amount">I'm Donating</label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">$</span>
+                                      <input type="number" class="form-control" id="donation-amount" name="donation-amount" readonly required>
+                                  </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label>Choose Amount</label>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-1000" value="1000" checked>
+                                      <label class="form-check-label" for="donation-option-1000">
+                                          $1000
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-750" value="750">
+                                      <label class="form-check-label" for="donation-option-750">
+                                          $750
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-500" value="500">
+                                      <label class="form-check-label" for="donation-option-500">
+                                          $500
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-other" value="other">
+                                      <label class="form-check-label" for="donation-option-other">
+                                          Other
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="mb-3 other-amount" style="display: none;">
+                                  <label for="other-amount">Enter Other Amount</label>
+                                  <div class="input-group">
+                                      <span class="input-group-text">$</span>
+                                      <input type="number" class="form-control" id="other-amount" name="other-amount">
+                                  </div>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Donate</button>
+                          </form>
+                          <!-- End Donation Form -->
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-  
-      <button id="donateButton" class="btn btn-primary mt-3">Donate</button>
-    </div> <!-- End Donate Information Section -->
+  </section><!-- End Donation Information Section -->
       
     <!-- ======= Cats & Dogs Wish List Section ======= -->
     <section id="cats-dogs-wishlist" class="section">
