@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MeowgAw | About Us</title>
+  <title>MeowgAw | Donate</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -159,41 +159,40 @@
         </div>
       </section><!-- End Donate Options -->
 
-    <!-- ======= Official Donation Channels Section ======= -->
-    <section id="official-donation-channels" class="section">
-        <div class="container">
-            <div class="section-title">
-            <h2>Official Donation Channels</h2>
-            <p>Choose your preferred donation method:</p>
+    <!-- ======= Donation Information Section ======= -->
+    <div class="container">
+      <h2>Donation Information</h2>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#1000">1000 Pesos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#750">750 Pesos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#500">500 Pesos</a>
+        </li>
+      </ul>
+  
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="1000" class="container tab-pane active">
+          <h3>1000 Pesos</h3>
+          <input id="amountInput1000" type="text" class="form-control" value="1000" readonly>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h3>Online Payment Methods</h3>
-                <ul>
-                    <li>Visa</li>
-                    <li>Mastercard</li>
-                    <li>PayPal</li>
-                    <li>Maya</li>
-                </ul>
-            </div>
-            <div class="col-lg-4">
-                <h3>Bank Transfer</h3>
-                <ul>
-                    <li>BPI</li>
-                    <li>BDO</li>
-                    <li>Metrobank</li>
-                </ul>
-            </div>
-            <div class="col-lg-4">
-                <h3>E-Wallets</h3>
-                <ul>
-                    <li>GCash</li>
-                    <li>PayMaya</li>
-                </ul>
-            </div>
+        <div id="750" class="container tab-pane fade">
+          <h3>750 Pesos</h3>
+          <input id="amountInput750" type="text" class="form-control" value="750" readonly>
         </div>
+        <div id="500" class="container tab-pane fade">
+          <h3>500 Pesos</h3>
+          <input id="amountInput500" type="text" class="form-control" value="500" readonly>
         </div>
-    </section><!-- End Official Donation Channels Section -->
+      </div>
+  
+      <button id="donateButton" class="btn btn-primary mt-3">Donate</button>
+    </div> <!-- End Donate Information Section -->
       
     <!-- ======= Cats & Dogs Wish List Section ======= -->
     <section id="cats-dogs-wishlist" class="section">
