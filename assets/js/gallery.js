@@ -1,8 +1,8 @@
 // Sample stray data
 const strayData = [
   { imgSrc: 'assets/img/gallery/gallery-1.jpg', name: 'Alejandro', type: 'cat', gender: 'female', color: 'brown', story: "Insert short story or description." },
-  { imgSrc: 'assets/img/gallery/gallery-2.jpg', name: 'Alejandro', type: 'cat', gender: 'female', color: 'brown', story: "Insert short story or description." },
-  { imgSrc: 'assets/img/gallery/gallery-3.jpg', name: 'Alejandro', type: 'cat', gender: 'female', color: 'brown', story: "Insert short story or description." },
+  { imgSrc: 'assets/img/gallery/gallery-2.jpg', name: 'Pedro', type: 'cat', gender: 'female', color: 'brown', story: "Insert short story or description." },
+  { imgSrc: 'assets/img/gallery/gallery-3.jpg', name: 'Ingrid', type: 'cat', gender: 'female', color: 'brown', story: "Insert short story or description." },
   { imgSrc: 'assets/img/gallery/gallery-4.jpg', name: 'Alejandro', type: 'cat', gender: 'female', color: 'brown', story: "Insert short story or description." },
   // add more stray data here with color property
 ];
