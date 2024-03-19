@@ -162,65 +162,40 @@
     <!-- ======= Donation Information Section ======= -->
     <section id="donation-information" class="section">
       <div class="container">
-          <div class="section-title">
-              <h2>Make a One-Time Donation</h2>
-              <p>Help us give these animals a second chance at a happy and healthy life.</p>
-          </div>
-          <div class="row">
-              <div class="col-lg-6">
-                  <div class="card">
-                      <div class="card-body">
-                          <!-- Donation Form -->
-                          <form id="donation-form" class="donation-form">
-                              <div class="mb-3">
-                                  <label for="donation-amount">I'm Donating</label>
-                                  <div class="input-group">
-                                      <span class="input-group-text">$</span>
-                                      <input type="number" class="form-control" id="donation-amount" name="donation-amount" readonly required>
-                                  </div>
-                              </div>
-                              <div class="mb-3">
-                                  <label>Choose Amount</label>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-1000" value="1000" checked>
-                                      <label class="form-check-label" for="donation-option-1000">
-                                          $1000
-                                      </label>
-                                  </div>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-750" value="750">
-                                      <label class="form-check-label" for="donation-option-750">
-                                          $750
-                                      </label>
-                                  </div>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-500" value="500">
-                                      <label class="form-check-label" for="donation-option-500">
-                                          $500
-                                      </label>
-                                  </div>
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="donation-option" id="donation-option-other" value="other">
-                                      <label class="form-check-label" for="donation-option-other">
-                                          Other
-                                      </label>
-                                  </div>
-                              </div>
-                              <div class="mb-3 other-amount" style="display: none;">
-                                  <label for="other-amount">Enter Other Amount</label>
-                                  <div class="input-group">
-                                      <span class="input-group-text">$</span>
-                                      <input type="number" class="form-control" id="other-amount" name="other-amount">
-                                  </div>
-                              </div>
-                              <button type="submit" class="btn btn-primary">Donate</button>
-                          </form>
-                          <!-- End Donation Form -->
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Donation Form -->
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Make a One-Time Donation</h2>
+                        <p class="card-text">Help us give these animals a second chance at a happy and healthy life.</p>
+                        <div class="mb-3 d-flex align-items-center">
+                            <label for="donation-amount" class="me-3">I'm Donating</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control border-0" id="donation-amount" name="donation-amount" readonly required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Choose Amount</label>
+                            <div class="btn-group" role="group" aria-label="Donation Options">
+                                <button type="button" class="btn btn-outline-primary active" data-donation-amount="1000">$1000</button>
+                                <button type="button" class="btn btn-outline-primary" data-donation-amount="750">$750</button>
+                                <button type="button" class="btn btn-outline-primary" data-donation-amount="500">$500</button>
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#customAmountModal">Other</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Donate</button>
+                    </div>
+                </div>
+                <!-- End Donation Form -->
+            </div>
+            <div class="col-lg-6">
+                <!-- Image -->
+                <img src="assets/img/adoption.png" alt="Donate Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
   </section><!-- End Donation Information Section -->
       
     <!-- ======= Cats & Dogs Wish List Section ======= -->
@@ -360,6 +335,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS File for Donation -->
+  <script src="assets/js/donate.js"></script>
 
 </body>
 
