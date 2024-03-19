@@ -13,13 +13,20 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!--fontawesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!----addtional bootstrap---->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome for icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Custom CSS -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +42,7 @@
   <!---about css--->
   <link href="assets/css/about.css" rel="stylesheet">
 
+
   <!-- =======================================================
   * Edit with caution
   * KM2JS
@@ -44,9 +52,8 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header fixed-top d-flex align-items-center" style="z-index: 1 !important">
     <div class="container d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Default logo for larger screens -->
         <img src="assets/img/logo.png" alt="" class="d-none d-md-block">
@@ -63,15 +70,73 @@
           <li><a href="blog.html">Blogs</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html">About Us</a></li>
+        </ul>
       </nav><!-- .navbar -->
 
-      <a class="user-authBtn" href="#">Sign In</a>
-      <a class="user-authBtn" href="#">Sign Up</a>
+      <button class="user-authBtn" data-toggle="modal" data-target="#signIn">Sign In</button>
+      <button class="user-authBtn" data-toggle="modal" data-target="#signUp">Sign Up</button>
+      
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
+
   </header><!-- End Header -->
+
+  <!-- sign In modal -->
+  <div class="modal fade" id="signIn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form>
+            <img src="assets/img/favicon.png">
+            <h3>Sign Up to MeowgAw</h3>
+
+            <div class="inputs">
+              <label for="email">Email Address</label><br>
+              <input type="email" id="email"><br>
+              <label for="password">Password</label><br>
+              <input type="password" id="password"><br>
+              <label for="repassword">Re-enter Password</label><br>
+              <input type="password" id="repassword"><br>
+            </div>
+
+            <button type="submit" class="submit">Sign Up</button>
+            <p class="reminder">By clicking "Sign Up", I understand and agree to the MeowgAw's collective 
+            <a href="">Terms</a>, <a href="#">Terms of Use</a>, and <a href="#">Privacy Policy</a>.</p>
+
+            <p class="alternate">Already have an account? <a href="#">Log in</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sign In modal -->
+  <div class="modal fade" id="signUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form>
+            <img src="assets/img/favicon.png">
+            <h3>Sign into MeowgAw</h3>
+
+            <div class="inputs">
+              <label for="email">Email Address</label><br>
+              <input type="email" id="email"><br>
+              <label for="password">Password</label><br>
+              <input type="password" id="password"><br>
+            </div>
+
+            <button type="submit" class="submit">Sign In</button>
+            <a href="#" class="forgot">Forgot Password?</a>
+            <p class="alternate">Doesn't have an account yet? <a href="#">Sign Up</a></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center section-bg">
@@ -81,7 +146,7 @@
           <h2 data-aos="fade-up">MeowgAw</h2>
           <p data-aos="fade-up" data-aos-delay="100">Welcome to MeowgAw! We're dedicated to finding loving FURever homes for our furry friends. Discover a variety of adorable and playful pets, from cuddly cats to energetic dogs, waiting to bring joy into your life. Let's create a world where every pet finds a loving home.</p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#book-a-table" class="btn-book-a-table">Check-out Strays</a>
+            <a href="gallery.html" class="btn-book-a-table">Check-out Strays</a>
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
@@ -285,7 +350,7 @@
             <div class="row gy-5">
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/shop/toy-1.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/shop/toy-1.jpg" class="glightbox"><img src="assets/img/shop/toy-1.jpg" class="menu-img img-fluid" alt=""></a>
                 <h4>Chewable Pig that Oinks</h4>
                 <p class="ingredients">
                   Lorem, deren, trataro, filede, nerada
@@ -296,7 +361,7 @@
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/shop/toy-2.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/shop/toy-2.jpg" class="glightbox"><img src="assets/img/shop/toy-2.jpg" class="menu-img img-fluid" alt=""></a>
                 <h4>Jungle Plush Pals</h4>
                 <p class="ingredients">
                   Lorem, deren, trataro, filede, nerada
@@ -307,7 +372,7 @@
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/shop/toy-3.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/shop/toy-3.jpg" class="glightbox"><img src="assets/img/shop/toy-3.jpg" class="menu-img img-fluid" alt=""></a>
                 <h4>Sratch Post</h4>
                 <p class="ingredients">
                   Lorem, deren, trataro, filede, nerada
@@ -397,7 +462,7 @@
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/accessory-3.jpg" class="menu-img img-fluid" alt=""></a>
+                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/shop/accessory-3.jpg" class="menu-img img-fluid" alt=""></a>
                 <h4>Very Cool Dog Sunglasses</h4>
                 <p class="ingredients">
                   Lorem, deren, trataro, filede, nerada
@@ -667,6 +732,11 @@
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

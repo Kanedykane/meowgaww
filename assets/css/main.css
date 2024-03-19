@@ -266,7 +266,7 @@ section {
 .header {
   background: #fff;
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 1;
   height: 90px;
   border-bottom: 1px solid #fff;
 }
@@ -303,6 +303,7 @@ section {
   border-radius: 50px;
   margin-left: 15px;
   transition: 0.3s;
+  border: none;
 }
 
 .header .user-authBtn:hover,
@@ -324,6 +325,111 @@ section {
     margin-left: 15px;
     transition: 0.3s;
   }
+}
+
+/*--------------modal---------------*/
+
+.modal-body form{
+  padding: 25px;
+  text-align: center;
+}
+
+.modal-body form img{
+  width: 50px;
+}
+
+.modal-body form label{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.modal-body form input{
+  border-radius: 0;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: black solid 1px;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.modal-body form input:focus{
+  border: none;
+  outline: none;
+  border-bottom: black solid 1px;
+}
+
+.popup-content form .reminder{
+  font-size: 9px;
+  font-style: italic;
+}
+
+.modal-body form .alternate{
+  padding-top: 25px;
+  font-size: 13px;
+}
+
+.modal-body a{
+  text-decoration: underline;
+}
+
+.modal-body p button{
+  background-color: transparent;
+  text-decoration: underline;
+  outline: none;
+  border: none;
+}
+
+.modal-body p button:hover{
+  color: black; 
+}
+
+.modal-body .forgot{
+  color: black;
+  text-align: right !important;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-container .icon {
+  left: 45px;
+  position: absolute;
+  padding-top: 5px;
+  min-width: 55px;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.submit{
+  background-color: var(--darkgreen);
+  border:none;
+  color:white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 8px;
+  width: 100%;
+  transition: all.50s ease;
+}
+
+.submit:hover{
+  background-color: white;
+  color: var(--darkgreen);
+}
+
+.inputs{
+  text-align: left;
+  padding-top: 45px;
 }
 
 /*--------------------------------------------------------------
