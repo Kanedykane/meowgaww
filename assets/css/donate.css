@@ -78,6 +78,12 @@
     background-color: #fff;
     border: none;
   }
+
+.btn-donate {
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+}
   
   /* ======= Cats & Dogs Wish List Section ======= */
   #cats-dogs-wishlist {
@@ -120,4 +126,23 @@
   #shelter-wishlist ul {
     padding-left: 20px;
   }
-  
+
+#single-picture {
+    margin-top: 50px; 
+}
+
+.image-container {
+    text-align: center; 
+}
+
+.image-container img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+@media (min-width: 768px) {
+    /* For larger screens, position the image to the left */
+    .image-container {
+        text-align: left;
+    }
+}
