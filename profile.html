@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MeowgAw | Gallery</title>
+  <title>MeowgAw | Home</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -12,10 +13,20 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!--fontawesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!----addtional bootstrap---->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome for icons (optional) -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +41,9 @@
   <link href="assets/css/gallery.css" rel="stylesheet">
   <!---about css--->
   <link href="assets/css/about.css" rel="stylesheet">
+  <!---profile/dashboard css--->
+  <link href="assets/css/profile.css" rel="stylesheet">
+
 
   <!-- =======================================================
   * Edit with caution
@@ -40,9 +54,8 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header fixed-top d-flex align-items-center" style="z-index: 1 !important">
     <div class="container d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Default logo for larger screens -->
         <img src="assets/img/logo.png" alt="" class="d-none d-md-block">
@@ -53,113 +66,120 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="blog.html">Blogs</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html">About Us</a></li>
+        </ul>
       </nav><!-- .navbar -->
 
-      <a class="user-authBtn" href="#">Sign In</a>
-      <a class="user-authBtn" href="#">Sign Up</a>
+      <button class="user-authBtn" data-toggle="modal" data-target="#signUp">Sign In</button>
+      <button class="user-authBtn" data-toggle="modal" data-target="#signIn">Sign Up</button>
+      
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
+
   </header><!-- End Header -->
 
-  <!--gallery banner-->
-  <main id="main">
+  <div class="profileWrapper">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs gallery-container mb-3">
-      <div class="container">
+    <div class="container mt-5">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h1 class="display-3">Gallery</h1>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Gallery</li>
-          </ol>
+      <div class="row pt-3">
+
+        <div class="col-md-4 pt-5" style="background-color: ;">
+
+            <img class="profilePic h-50 pt-5 d-block mx-auto" src="assets/img/favicon.png">
+
+            <div class="userDetails text-center mt-3">
+              <h4 class="userName">Username</h4>
+              <p class="name light">Real Name</p>
+              <p class="email light">email@gmail.com</p>
+            </div>
+
+            <div class="profileButtons text-center mt-3">
+              <button class="edit w-50">Edit Profile</button>
+              <button class="delete w-50">Delete Account</button>
+            </div>
+
         </div>
+
+        <div class="col-md-8 pt-5" style="background-color: ; overflow-y: auto;">
+
+          <div class="userActivities m-3 h-7 p-4">
+
+            <ul class="list-inline">
+              <li class="list-inline-item" onclick="showContent('blogs')">Blog</li>
+              <li class="list-inline-item" onclick="showContent('submissions')">Submission</li>
+              <li class="list-inline-item" onclick="showContent('favorites')">Cart</li>
+              <hr>
+            </ul>
+
+            <div class="profile-blog-content user-act" id="profile-blog-content">
+              <form class="post-blog">
+                <h3>Share something with the community...</h3>
+                <input placeholder="Title..." type="text" name="title"><br>
+                <textarea placeholder="Content..." name="body"></textarea><br>
+                <input type="hidden" name="uploader" value="<%= user._id %>">
+                <button>Post</button>
+              </form>
+
+              <div class="posted-blogs">
+                  <h3>You have no posts yet.</h3>
+                    <h3>Blog Title</h3>
+                    <p class="userBlogBody"></p><br>
+                    <p class="userBlogStatus"></p>
+                    <br><hr><br>
+              </div>
+            </div>
+
+            <div class="profile-submission-content user-act" id="profile-submission-content" style="display: none;">
+              <div id="content-strays" class="contentStray"></div>
+              <div>
+                <h3>You have no submissions yet.</h3>
+                    <div class="dash-container">
+
+                      <div class="dash-image">
+                        <img src="data:image/png; base64,<%= stray.imgData.toString('base64') %>" alt="<%= stray.name %>">
+                      </div>
+          
+                      <div class="dash-info">
+                        <p>Name: </p>
+                        <p>Age: </p>
+                        <p>Gender: /p>
+                        <p>Gender: </p>
+                        <p>Breed: </p>
+                        <p>Status: </p>
+                      </div>
+          
+                      <div class="crud-btns">
+                        <button>Edit</button>
+                        <button>Delete</button>
+                      </div>
+          
+                    </div>
+                <button onclick="location.href='/create'">Submit a stray.</button>
+              </div>
+
+            </div>
+
+            <div class="profile-favorites-content user-act" id="profile-favorites-content" style="display: none;">
+              <h1>User favorite content here.</h1>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-    </div><!-- End Breadcrumbs -->
 
-  <div class="container p-1">
-
-    <div class="mb-4">
-
-      <!---filter buttons--->
-      <div class="dropdown d-inline mb-2">
-        <h4 class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Type
-        </h4>
-              
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Cat</a></li>
-          <li><a class="dropdown-item" href="#">Dog</a></li>
-          <li><a class="dropdown-item" href="#">Reptile</a></li>
-          <li><a class="dropdown-item" href="#">Other</a></li>
-          </ul>
-      </div>
-
-      <div class="dropdown d-inline">
-        <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Sex
-        </button>
-              
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Male</a></li>
-          <li><a class="dropdown-item" href="#">Female</a></li>
-        </ul>
-      </div>
-
-      <div class="dropdown d-inline">
-        <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Color
-        </button>
-              
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">White</a></li>
-          <li><a class="dropdown-item" href="#">Black</a></li>
-          <li><a class="dropdown-item" href="#">Orange</a></li>
-          <li><a class="dropdown-item" href="#">Brown</a></li>
-          <li><a class="dropdown-item" href="#">Other</a></li>
-        </ul>
-      </div>
-
-      <div class="dropdown d-inline">
-        <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Size
-        </button>
-              
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-
-      <div class="dropdown d-inline">
-        <button class="btn dropdown-toggle filterBtn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Age Range
-        </button>
-              
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#"><1 year old</a></li>
-          <li><a class="dropdown-item" href="#">1 - 2 years old</a></li>
-          <li><a class="dropdown-item" href="#">3-4 years old</a></li>
-          <li><a class="dropdown-item" href="#">>5 years old</a></li>
-        </ul>
-      </div>
     </div>
 
-    <div class="row">
-
-    </div>
   </div>
-  <!-- End -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -229,6 +249,11 @@
 
   <div id="preloader"></div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -239,7 +264,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/userscript.js"></script>
 
 </body>
 
