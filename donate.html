@@ -167,36 +167,70 @@
         <div class="row">
             <div class="col-lg-6">
                 <!-- Donation Form -->
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title">Make a One-Time Donation</h2>
-                        <p class="card-text">Help us give these animals a second chance at a happy and healthy life.</p>
-                        <div class="mb-3 d-flex align-items-center">
-                            <label for="donation-amount" class="me-3">I'm Donating</label>
-                            <div class="input-group">
-                                <span class="input-group-text">₱</span>
-                                <input type="number" class="form-control" id="donation-amount" name="donation-amount" readonly required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="btn-group" role="group" aria-label="Donation Options">
-                                <button type="button" class="btn btn-outline-primary" data-donation-amount="1000">₱1000</button>
-                                <button type="button" class="btn btn-outline-primary" data-donation-amount="750">₱750</button>
-                                <button type="button" class="btn btn-outline-primary" data-donation-amount="500">₱500</button>
-                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#customAmountModal">Other</button>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-donate">Donate</button>
-                    </div>
-                </div>
-                <!-- End Donation Form -->
-            </div>
-            <div class="col-lg-6">
-              <!-- Image Container -->
-              <div class="image-container">
-                <img src="assets/img/doCATe.jpg" alt="Donate Image" class="img-fluid">
-              </div>
-              <!-- End Image Container -->
+                <div class="container donate-wrapper donation-form">
+                  <h2>Advocates for Strays</h2>
+                  <p class="subtitle">Join us in being an Advocate for Strays and help us give these animals a second chance at a happy and healthy life.</p>
+                  <form id="msform">
+              
+                      <!-- progressbar -->
+                      <ul id="progress-list" class="list-unstyled d-flex justify-content-between">
+                          <li class="progress-item progress1 current-item">
+                              <span class="progress-label">Amount</span>
+                          </li>
+              
+                          <!-- <li class="progress-item">
+                              <span class="progress-label">My Info</span>
+                          </li> -->
+              
+                          <li class="progress-item progress2">
+                              <span class="progress-label">Payment</span>
+                          </li>
+              
+                          <li class="progress-item progress3">
+                              <span class="progress-label">Confirm</span>
+                          </li>
+                      </ul>
+                  </form>
+              
+                  <form id="donationForm">
+                      <% if (user) { %>
+                      <input type="hidden" name="donor" value="<%= user._id %>">
+                      <% } else { %>
+                      <input type="hidden" name="donor" value="anonymous">
+                      <% } %>
+                      <div id="donate1" class="form-section">
+                          <h3>ONE-TIME</h3>
+                          <div class="value">
+                              <button class="btn btn-primary money-btn" id="button1000" value="1000">₱1000</button>
+                              <button class="btn btn-primary money-btn" id="button750" value="750">₱750</button>
+                              <button class="btn btn-primary money-btn" id="button500" value="500">₱500</button>
+                              <button class="btn btn-secondary" id="otherAmountButton">Other Amount</button>
+                          </div>
+              
+                          <div class="TextContainer">
+                              <div id="text1000" style="display: none;">
+                                  <p><i class="fa-solid fa-paw" style="color: #ffffff;"></i> Can help provide essential care for rescued animals <i class="fa-solid fa-paw" style="color: #ffffff;"></i></p>
+                              </div>
+              
+                              <div id="text750" style="display: none;">
+                                  <p><i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i> Can help cover medical expenses for our furry friends <i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i></p>
+                              </div>
+              
+                              <div id="text500" style="display: none;">
+                                  <p><i class="fa-solid fa-house" style="color: #ffffff;"></i> Can help provide food and shelter for homeless pets <i class="fa-solid fa-house" style="color: #ffffff;"></i></p>
+                              </div>
+              
+                              <div id="inputFieldContainer" class="input-field" style="display: none;">
+                                  <input type="text" id="inputField" class="form-control" placeholder="Amount in Peso">
+                              </div>
+                          </div>
+              
+                          <h4>We Accept:</h4>
+                          <div class="accept-img"><img src="pics/group3.png" height="20px"/></div>
+                          <button id="DonateButton" class="btn btn-primary form-button">DONATE</button>
+                      </div>
+                  </form>
+              </div>              
             </div>
         </div>
     </div>
