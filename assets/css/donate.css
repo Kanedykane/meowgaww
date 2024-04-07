@@ -51,34 +51,6 @@
     color: #666;
   }
   
-  /* ======= Donation Information Section ======= */
-  #donation-information {
-    padding: 60px 0;
-  }
-  
-  #donation-information .card {
-    background: #f9f9f9;
-    border: none;
-    padding: 30px;
-  }
-  
-  #donation-information .card h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  #donation-information .card p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
-  }
-  
-  #donation-information .input-group-text {
-    background-color: #fff;
-    border: none;
-  }
-  
   /* ======= Cats & Dogs Wish List Section ======= */
   #cats-dogs-wishlist {
     padding: 60px 0;
@@ -121,54 +93,50 @@
     padding-left: 20px;
   }
 
-/* Donation Wrapper */
-.donate-wrapper {
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  padding: 0 30px;
-  z-index: 1000;
+  /* ======= Donation Information Section ======= */
+  .donate-wrapper donation-form {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    padding: 0 30px;
+  }
+
+  .donate-wrapper donation-form h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+
+  .donate-wrapper donation-form p.subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .donationForm {
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+
+  .donationForm h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-.donate-wrapper h2 {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-.donate-wrapper p.subtitle {
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-/* Donation Form */
-.donation-form {
-  z-index: 2;
-  padding: 20px;
-  border: 2px solid white;
-  border-radius: 10px;
-}
-
-.donation-form h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
-  text-align: center;
-  color: black;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-.donation-form h4 {
+.donationForm h4 {
   font-size: 12px;
   color: black;
   text-align: center;
   margin-top: 10px;
 }
 
-/* Donation Form Content */
-.donation-form .value {
+.donationForm .value {
   text-align: center;
 }
 
-.donation-form .value button {
+.donationForm .value button {
   background-color: #566f64;
   color: white;
   font-size: 20px;
@@ -182,12 +150,12 @@
   margin-bottom: 20px;
 }
 
-.donation-form .value button:hover {
+.donationForm .value button:hover {
   background-color: white;
   color: #566f64;
 }
 
-.donation-form .value button.clicked,
+.donationForm .value button.clicked,
 .money-btn.active {
   background-color: transparent;
   border: 1px solid white;
@@ -245,7 +213,6 @@
   outline: 2px solid #a6d0ac;
 }
 
-/* Progress Bar */
 #progress-list {
   text-align: center;
   margin-bottom: 20px;
@@ -283,7 +250,7 @@
 #progress-list li:after {
   content: '';
   width: 100%;
-  border-bottom: 1px dashed lightgrey;
+  border-bottom: 1px dashed black;
   position: absolute;
   left: -50%;
   top: 14px;
