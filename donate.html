@@ -167,69 +167,162 @@
         <div class="row">
             <div class="col-lg-6">
                 <!-- Donation Form -->
-                <div class="container donate-wrapper donation-form">
+                <div class="donate-wrapper donation-form">
                   <h2>Advocates for Strays</h2>
                   <p class="subtitle">Join us in being an Advocate for Strays and help us give these animals a second chance at a happy and healthy life.</p>
                   <form id="msform">
-              
-                      <!-- progressbar -->
-                      <ul id="progress-list" class="list-unstyled d-flex justify-content-between">
-                          <li class="progress-item progress1 current-item">
-                              <span class="progress-label">Amount</span>
-                          </li>
-              
-                          <!-- <li class="progress-item">
-                              <span class="progress-label">My Info</span>
-                          </li> -->
-              
-                          <li class="progress-item progress2">
-                              <span class="progress-label">Payment</span>
-                          </li>
-              
-                          <li class="progress-item progress3">
-                              <span class="progress-label">Confirm</span>
-                          </li>
-                      </ul>
+          
+                    <!-- progressbar -->
+                      <ul id="progress-list">
+                      <li class="progress-item progress1 current-item">
+                        <span class="progress-label">Amount</span>
+                      </li>
+          
+                      <!-- <li class="progress-item">
+                        <span class="progress-label">My Info</span>
+                      </li> -->
+          
+                      <li class="progress-item progress2">
+                        <span class="progress-label">Payment</span>
+                      </li>
+          
+                      <li class="progress-item progress3">
+                        <span class="progress-label">Confirm</span>
+                      </li>
+                    </ul>
                   </form>
-              
+          
                   <form id="donationForm">
-                      <% if (user) { %>
+                    <% if (user) { %>
                       <input type="hidden" name="donor" value="<%= user._id %>">
-                      <% } else { %>
+                    <% } else { %>
                       <input type="hidden" name="donor" value="anonymous">
-                      <% } %>
-                      <div id="donate1" class="form-section">
-                          <h3>ONE-TIME</h3>
-                          <div class="value">
-                              <button class="btn btn-primary money-btn" id="button1000" value="1000">₱1000</button>
-                              <button class="btn btn-primary money-btn" id="button750" value="750">₱750</button>
-                              <button class="btn btn-primary money-btn" id="button500" value="500">₱500</button>
-                              <button class="btn btn-secondary" id="otherAmountButton">Other Amount</button>
+                    <% } %>
+                    <div id="donate1" class="form-section">
+                      
+                        <h3>ONE-TIME</h3>
+                        <div class="value">
+                            <button class="money-btn" id="button1000" value="1000">₱1000</button>
+                            <button class="money-btn" id="button750" value="750">₱750</button>
+                            <button class="money-btn" id="button500" value="500">₱500</button>
+                            <button id="otherAmountButton">Other Amount</button>
+                        </div>
+          
+                        <div class="TextContainer">
+                            <div id="text1000" style="display: none;">
+                                <p><i class="fa-solid fa-paw" style="color: #ffffff;"></i> Can help provide essential care for rescued animals <i class="fa-solid fa-paw" style="color: #ffffff;"></i></p>
+                            </div>
+          
+                            <div id="text750" style="display: none;">
+                                <p><i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i> Can help cover medical expenses for our furry friends <i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i></p>
+                            </div>
+          
+                            <div id="text500" style="display: none;">
+                                <p><i class="fa-solid fa-house" style="color: #ffffff;"></i> Can help provide food and shelter for homeless pets <i class="fa-solid fa-house" style="color: #ffffff;"></i></p>
+                            </div>
+          
+                            <div id="inputFieldContainer" class="input-field" style="display: none;">
+                                <input type="text" id="inputField" placeholder="Amount in Peso">
+                            </div>
+                        </div>
+                        
+                      <h4>We Accept:</h4>
+                      <div class="accept-img"><img src="pics/group3.png" height="20px"/></div>
+                      <a id="DonateButton" class="form-button">DONATE</a>
+                    </div>
+          
+                    <div id="donate3" class="form-section"> 
+                      <a class="back">&lt; Back to Amount</a> 
+                      <h2>Payment Method</h2>
+          
+                      <div class="donate3Form">
+                            <div id="creditCard" class="tabcontent">
+                                <label for="paymentMethod">Payment Method</label><br>
+                                <select id="paymentMethod" name="paymentMethod">
+                                    <option value="none" selected disabled>Select Payment Method</option>
+                                    <option value="card">Credit / Debit Card</option>
+                                    <option value="ewallet">E-Wallets</option>
+                                </select>
+                            </div>
+          
+                              <div id="cardForm" class="hide">
+                                  <div class="p-group">
+                                      <label for="accountNumber">Account Number:</label><br>
+                                      <input type="text" name="accountNumber" class="c-number" placeholder="Enter Account Number" maxlength="10" required>
+                                  </div>
+                                                      
+                                  <div class="p-group">
+                                      <label for="accountName">Account Name:</label><br>
+                                      <input type="text" name="accountName" class="c-number" placeholder="Enter Account Name" required>
+                                  </div>
+                                                     
+                              </div>
+          
+                              <div id="ewalletForm" class="hide">
+                                  <div class="p-group">
+                                      <label for="phoneNumber">Phone Number:</label><br>
+                                      <input type="text" id="phoneNumber" name="phoneNumber" required>
+                                  </div>
+                              </div>
+                           </div>
+          
+                          <a id="paymentButton" class="form-button">CONTINUE</a>
+                    </div>
+          
+                    <div id="donate4" class="form-section">
+                      
+                      <a class="back">&lt; Back to Payment</a> 
+                      <div class="confirm">
+                        <h2>Payment Confirmation</h2>
+          
+                          <div class="receipt">
+          
+                            <div class="receiptUsername">
+                              <p class="label">Receipt for: </p>
+                              <p class="donationDeets">Anonymous</p>
+                            </div>
+          
+                            <div class="donationInfo">
+                              <p class="label">Date: </p>
+                              <p class="donationDeets">October 23, 2023</p>
+                              <br>
+          
+                              <p class="label">Payment Method: </p>
+                              <p class="donationDeets">Gcash</p>
+                              <br>
+          
+                              <p class="label">Amount: </p>
+                              <p class="donationDeets" id="don-amount">750 pesos</p>
+                            </div>
+          
                           </div>
-              
-                          <div class="TextContainer">
-                              <div id="text1000" style="display: none;">
-                                  <p><i class="fa-solid fa-paw" style="color: #ffffff;"></i> Can help provide essential care for rescued animals <i class="fa-solid fa-paw" style="color: #ffffff;"></i></p>
+                              <!--<div class="receipt-row">
+                                <span class="receipt-label">Amount:</span>
+                                <span id="donation-amount" class="receipt-value"></span>
                               </div>
-              
-                              <div id="text750" style="display: none;">
-                                  <p><i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i> Can help cover medical expenses for our furry friends <i class="fa-solid fa-notes-medical" style="color: #ffffff;"></i></p>
+                              
+                              <div class="receipt-row">
+                                <span class="receipt-label">Date:</span>
+                                <span class="receipt-value">October 23, 2023</span>
+                             </div>
+                              
+                              <div class="receipt-row">
+                                <span class="receipt-label">Receipt No:</span>
+                                <span class="receipt-value">123456</span>
                               </div>
-              
-                              <div id="text500" style="display: none;">
-                                  <p><i class="fa-solid fa-house" style="color: #ffffff;"></i> Can help provide food and shelter for homeless pets <i class="fa-solid fa-house" style="color: #ffffff;"></i></p>
-                              </div>
-              
-                              <div id="inputFieldContainer" class="input-field" style="display: none;">
-                                  <input type="text" id="inputField" class="form-control" placeholder="Amount in Peso">
-                              </div>
-                          </div>
-              
-                          <h4>We Accept:</h4>
-                          <div class="accept-img"><img src="pics/group3.png" height="20px"/></div>
-                          <button id="DonateButton" class="btn btn-primary form-button">DONATE</button>
-                      </div>
+                          </div>-->
+                        </div>
+          
+                        <button id="confirmButton" class="form-button" onclick="listenDonation()">CONFIRM</button>
+                    </div>
+          
+                    <div id="donate5" class="form-section">
+                      <h3 class="thankyouMsg">Thank you for donating!</h3>
+                      <img src="pics/donateTY.png">
+                      <a id="doneButton" class="form-button">Done</a> 
+                    </div>
                   </form>
+                </div>
               </div>              
             </div>
         </div>
