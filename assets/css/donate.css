@@ -31,6 +31,7 @@
   /* ======= Donate Options ======= */
   #donate-options {
     padding: 60px 0;
+    margin-bottom: 20px;
   }
   
   #donate-options .card {
@@ -50,6 +51,10 @@
     line-height: 1.8;
     color: #666;
   }
+
+  .btn-primary {
+    background-color: #566f64;
+  }   
   
   /* ======= Cats & Dogs Wish List Section ======= */
   #cats-dogs-wishlist {
@@ -122,7 +127,7 @@
     display: block;
     font-size: 10px;
     color: #333;
-    background: lightgrey;
+    background: gray;
     border-radius: 50%;
     margin: 0 auto 12px auto;
     border: 1px solid white;
@@ -132,7 +137,7 @@
 #progress-list li:after {
     content: '';
     width: 100%;
-    border-bottom: 1px dashed lightgrey;
+    border-bottom: 1px dashed gray;
     position: absolute;
     left: -50%;
     top: 14px;
@@ -163,7 +168,7 @@
     margin: 0 auto 5px;
 }
 
-#progress-list li.approved:after,
+#sprogress-list li.approved:after,
 #progress-list li.current-item:after {
     border-bottom: 2px solid white;
 }
@@ -178,8 +183,7 @@
 .donation-form {
     z-index: 2; 
     padding: 20px;
-    background: linear-gradient(rgba(209, 139, 119, 0.75), rgba(186, 109, 94, 0.75), rgba(136, 68, 55, 0.75));
-    border: 2px solid white;
+    border: 2px solid gray;
     border-radius: 10px;
 }
 
@@ -187,13 +191,12 @@
     font-size: 40px;
     margin-bottom: 10px;
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    color: black;
 }
 
 .donation-form h4 {
     font-size: 12px;
-    color: white;
+    color: black;
     text-align: center;
     margin-top: 10px;
 }
@@ -201,9 +204,8 @@
 .donation-form .subtitle {
     text-align: center;
     font-size: 16px;
-    color: white;
+    color: black;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 #msform {
@@ -217,7 +219,6 @@
 .donation-form h3 {
     font-size: 30px;
     color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -256,20 +257,20 @@
 }
 
 .donation-form .value button:hover {
-    background-color: white;
+    background-color: gray;
     color: #566f64; 
 }
 
 .donation-form .value button.clicked {
     background-color: transparent;
-    border: 1px solid white; 
-    color: white; 
+    border: 1px solid gray; 
+    color: gray; 
 }
 
 .money-btn.active {
     background-color: transparent;
-    border: 1px solid white; 
-    color: white; 
+    border: 1px solid gray; 
+    color: gray; 
 }
 
 .form-button{
@@ -290,7 +291,7 @@
 }
 
 .form-button:hover {
-    background-color: white; 
+    background-color: gray; 
     color: #566f64; 
 }
 
@@ -313,7 +314,7 @@
 }
 
 .input-field input::placeholder {
-    color: white;
+    color: gray;
     opacity: 50%; 
     font-size: 16px;
     text-align: center;
@@ -323,7 +324,7 @@
     border: none; 
     background: transparent;
     width: 100%;
-    color: white;
+    color: black;
     text-align: center;
     padding: 8px;
     font-size: 28px;
@@ -339,12 +340,13 @@
 
 .back{
     margin-bottom: 15px;
-    color: white;
+    color: black;
     text-decoration: underline;
 }
 
 .back:hover{
     color: var(--darkgreen);
+    cursor: pointer;
 }
 
 .form-group1 input{
@@ -396,11 +398,11 @@
 /*receipt*/
 
 .receipt{
-    border: 1px solid white;
+    border: 1px solid black;
     line-height: 19px;
     margin: 0 120px;
     border-radius: 15px;
-    background-color: white;
+    background-color: gray;
 }
 
 .receipt p{
