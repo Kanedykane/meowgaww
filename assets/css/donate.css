@@ -52,8 +52,9 @@
     color: #666;
   }
 
-  .btn-primary {
+  #donate-options .btn-primary {
     background-color: #566f64;
+    border: none;
   }   
   
   /* ======= Cats & Dogs Wish List Section ======= */
@@ -99,6 +100,19 @@
   }
 
   /* ======= Donation Information Section ======= */
+  #donation-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  #donation-information .container {
+    width: 100%;
+    max-width: 1200px;  
+    padding: 0 15px;
+}
+
   #progress-list {
     text-align: center;
     margin-bottom: 20px;
@@ -257,7 +271,7 @@
 }
 
 .donation-form .value button:hover {
-    background-color: gray;
+    background-color: #ccc;
     color: #566f64; 
 }
 
@@ -311,6 +325,7 @@
 
 .input-field {
     text-align: center;
+    border: gray;
 }
 
 .input-field input::placeholder {
@@ -402,7 +417,7 @@
     line-height: 19px;
     margin: 0 120px;
     border-radius: 15px;
-    background-color: gray;
+    background-color: #ccc;
 }
 
 .receipt p{
