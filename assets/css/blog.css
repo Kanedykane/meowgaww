@@ -257,6 +257,12 @@ body{
     }
 }
 
-.heart-red {
+.fa-heart-o {
     color: red;
+    cursor: pointer;
+  }
+  
+  .fa-heart {
+    color: red;
+    cursor: pointer;
   }

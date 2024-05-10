@@ -1,6 +1,11 @@
-function toggleHeartColor() {
-    var heartIcon = document.getElementById('heart').querySelector('i');
-    heartIcon.classList.toggle('fa-heart-o');
-    heartIcon.classList.toggle('fa-heart');
-    heartIcon.classList.toggle('heart-red');
-  }
+$(document).ready(function(){
+    $("#heart").click(function(){
+      if($("#heart").hasClass("liked")){
+        $("#heart").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+        $("#heart").removeClass("liked");
+      }else{
+        $("#heart").html('<i class="fa fa-heart" aria-hidden="true"></i>');
+        $("#heart").addClass("liked");
+      }
+    });
+  });
