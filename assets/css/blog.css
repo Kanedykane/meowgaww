@@ -257,3 +257,7 @@ body{
         padding: 30px
     }
 }
+
+.liked {
+    color: red;
+  }
