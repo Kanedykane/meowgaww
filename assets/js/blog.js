@@ -1,65 +1,27 @@
-$( document ).ready(function() {
-    var scaleCurve = mojs.easing.path('M0,100 L25,99.9999983 C26.2328835,75.0708847 19.7847843,0 100,0');
-       var el = document.querySelector('.button'),
-        // mo.js timeline obj
-        timeline = new mojs.Timeline(),
+/* 
+ * Love button for Design it & Code it
+ * http://designitcodeit.com/i/9
+ */
+$('.btn-counter').on('click', function(event, count) {
+    event.preventDefault();
     
-        // tweens for the animation:
+    var $this = $(this),
+        count = $this.attr('data-count'),
+        active = $this.hasClass('active'),
+        multiple = $this.hasClass('multiple-count');
     
-        // burst animation
-        tween1 = new mojs.Burst({
-            parent: el,
-      radius:   { 0: 100 },
-      angle:    { 0: 45 },
-      y: -10,
-      count:    10,
-       radius:       100,
-      children: {
-        shape:        'circle',
-        radius:       30,
-        fill:         [ 'red', 'white' ],
-        strokeWidth:  15,
-        duration:     500,
-      }
-        });
+    // First method, allows to add custom function
+    // Use when you want to do an ajax request
+    /* if (multiple) {
+    $this.attr('data-count', ++count);
+    // Your code here
+    } else {
+    $this.attr('data-count', active ? --count : ++count).toggleClass('active');
+    // Your code here
+    } */
     
+    // Second method, use when ... I dunno when but it looks cool and that's why it is here
+    $.fn.noop = $.noop;
+    $this.attr('data-count', ! active || multiple ? ++count : --count  )[multiple ? 'noop' : 'toggleClass']('active');
     
-        tween2 = new mojs.Tween({
-            duration : 900,
-            onUpdate: function(progress) {
-                var scaleProgress = scaleCurve(progress);
-                el.style.WebkitTransform = el.style.transform = 'scale3d(' + scaleProgress + ',' + scaleProgress + ',1)';
-            }
-        });
-              tween3 = new mojs.Burst({
-            parent: el,
-      radius:   { 0: 100 },
-      angle:    { 0: -45 },
-      y: -10,
-      count:    10,
-       radius:       125,
-      children: {
-        shape:        'circle',
-        radius:       30,
-        fill:         [ 'white', 'red' ],
-        strokeWidth:  15,
-        duration:     400,
-      }
-        });
-    
-    // add tweens to timeline:
-    timeline.add(tween1, tween2, tween3);
-    
-    
-    // when clicking the button start the timeline/animation:
-    $( ".button" ).click(function() {
-        if ($(this).hasClass('active')){
-            $(this).removeClass('active');
-        }else{
-      timeline.play();
-      $(this).addClass('active');
-        }
-    });
-    
-    
-    });
+  });
