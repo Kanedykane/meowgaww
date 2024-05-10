@@ -10,6 +10,8 @@ likeBtn.addEventListener('click', function() {
     // If the post is liked, increment the count, else decrement
     if (this.classList.contains('liked')) {
         count++;
+        // Show alert message when post is added to favorites
+        alert('Post added to favorites!');
     } else {
         count--;
     }
