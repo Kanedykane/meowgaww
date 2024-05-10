@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add custom styles here */
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Checkout</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Billing Information</h4>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h4>Order Summary</h4>
+        <div id="orderSummary">
+          <!-- Order summary will be dynamically generated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Function to update order summary
+      function updateOrderSummary() {
+        // You can modify this function to fetch and calculate order details dynamically
+        // For now, let's just display some static content
+        var summaryHTML = `
+          <p>Product: T-shirt</p>
+          <p>Quantity: 1</p>
+          <p>Total: $15.99</p>
+        `;
+        $('#orderSummary').html(summaryHTML);
+      }
+
+      // Call the function when the page loads
+      updateOrderSummary();
+
+      // Handle form submission
+      $('#checkoutForm').submit(function(event) {
+        event.preventDefault();
+        // Here you can add logic to submit the form data to a server or process it further
+        alert('Order placed successfully!');
+        // For demo, let's just reset the form
+        $(this)[0].reset();
+      });
+    });
+  </script>
+</body>
+</html>
